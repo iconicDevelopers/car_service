@@ -1,0 +1,46 @@
+$font-family-sans-serif: "Poppins";
+// Custom SCSS for Navbar Links
+.navbar {
+  background-color: #f8f9fa; // Light grey background for the navbar
+
+  // Customizing Nav Links inside Navbar
+  .navLinks {
+    color: #007bff; // Default link color (Bootstrap's primary color)
+    font-weight: 500; // Medium font weight for links
+    padding: 10px 15px; // Spacing for the links
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out; // Smooth transitions for hover effects
+
+    &:hover {
+      color: #fff; // Change text color to white on hover
+      background-color: #007bff; // Change background color on hover (Bootstrap's primary color)
+      border-radius: 5px; // Add border-radius for rounded hover effect
+    }
+
+    &:active {
+      color: #fff; // Change text color when active
+      background-color: #0056b3; // Darker shade for active link
+      border-radius: 5px;
+    }
+  }
+
+  // Adjusting Navbar Collapse for mobile view
+  .navbar-collapse {
+    justify-content: flex-end; // Ensure the links are aligned to the right
+  }
+
+  // Customizing Navbar Toggler (Hamburger icon)
+  .navbar-toggler {
+    border-color: #007bff; // Change the border color of the hamburger icon
+
+    &:focus {
+      outline: none; // Remove default outline when focused
+      box-shadow: none; // Remove any box shadow
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;..."); // Customize hamburger icon if needed
+    }
+  }
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";

@@ -1,0 +1,390 @@
+.jumbotron-custom {
+  position: relative;
+  background-image: url("../assets/BackroundCar.jpg"); /* Path to your background image */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the background image */
+  background-attachment: fixed; /* Creates a parallax effect */
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jumbotron-custom .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(
+    4,
+    0,
+    0,
+    0.3
+  ); /* Adds a dark overlay for better text visibility */
+  z-index: 1; /* Ensures the overlay and content appear above the background */
+}
+
+.jumbotron-custom h1,
+.jumbotron-custom p {
+  z-index: 2;
+  position: relative;
+  top: 100px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.jumbotron-custom h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #ffffff, #c7c4c4, #77a2d3);
+
+  /* Vendor prefixes for background-clip */
+  -webkit-background-clip: text; /* Chrome, Safari, newer versions of Edge */
+  -moz-background-clip: text; /* Firefox */
+  background-clip: text; /* Standard */
+
+  /* Vendor prefixes for text-fill-color */
+  -webkit-text-fill-color: transparent; /* Chrome, Safari, newer versions of Edge */
+  -moz-text-fill-color: transparent; /* Firefox (non-standard, fallback for older versions) */
+
+  animation: fadeIn 2s ease-in-out;
+}
+
+.jumbotron-custom p {
+  font-size: 1.5rem !important;
+  letter-spacing: 2px !important;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.8); /* Slight transparency for subtler text */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .jumbotron-custom {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center center;
+    height: auto;
+    min-height: 45vh;
+  }
+  .jumbotron-custom h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+
+  .jumbotron-custom p {
+    font-size: 1.3rem !important;
+    letter-spacing: 1px !important;
+    padding: 0 10px;
+  }
+  .jumbotron-custom h1,
+  .jumbotron-custom p {
+    position: relative;
+    top: 65px;
+  }
+}
+
+/* Navbar Links */
+.fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+  background-color: white;
+}
+
+.navbar-custom .nav-Links {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-left: 20px;
+  padding: 0.5rem 1.2rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-Links:hover {
+  border-bottom: 3px solid #f39c12;
+}
+
+.navbar-custom .nav-Links.active {
+  border-bottom: 3px solid #f39c12;
+}
+/* Toggle Button Styles */
+.navbar-custom .navbar-toggler {
+  border: none;
+  background: none;
+}
+
+.navbar-custom .navbar-toggler-icon {
+  font-size: 1.5rem;
+  color: #f8f9fa;
+  transition: color 0.3s ease;
+}
+/* Responsive Navbar Link Styles */
+@media screen and (max-width: 767px) {
+  #basic-navbar-nav {
+    margin: 5px 5px 0 5px;
+  }
+  .navbar-nav {
+    background: #f8f8f8;
+    padding: 7px 15px;
+  }
+  .navbar-custom .nav-Links {
+    padding: 8px;
+    font-weight: 500;
+    color: #000;
+    margin: 0px 10px 2px 7px;
+  }
+}
+/* Add responsive card styling, animations, and hover effects */
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  background-color: #fff !important;
+  border: none !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Default shadow for card */
+  position: relative;
+  padding: 20px;
+  height: 100%; /* Ensures the card takes full available height */
+  display: flex;
+  flex-direction: column; /* Ensures content is vertically aligned */
+}
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45); /* Deeper shadow on hover */
+  background-color: #f0f2f5; /* Light gray background on hover */
+  opacity: 0.8; /* Lighter opacity on hover */
+}
+
+.service-card i {
+  width: 90px;
+  height: 90px;
+  color: #1f2e4e; /* Default icon color */
+  background-color: #ea001e; /* Initial icon background color */
+  padding: 10px;
+  display: inline-block;
+  border-radius: 67% 33% 29% 71% / 39% 46% 54% 61%; /* Custom shape */
+  font-size: 3rem !important;
+  animation: icon-background-anim 5s infinite alternate ease-in-out; /* Applied animation */
+  transition: all 0.5s ease;
+}
+@keyframes icon-background-anim {
+  0% {
+    border-radius: 67% 33% 29% 71% / 39% 46% 54% 61%;
+  }
+  25% {
+    border-radius: 69% 31% 19% 81% / 43% 37% 63% 57%;
+  }
+  50% {
+    border-radius: 67% 33% 16% 84% / 57% 37% 63% 43%;
+  }
+  75% {
+    border-radius: 77% 23% 61% 39% / 36% 61% 39% 64%;
+  }
+  100% {
+    border-radius: 67% 33% 29% 71% / 39% 46% 54% 61%;
+  }
+}
+.service-card h5 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.service-card:hover h5,
+.service-card:hover p {
+  color: #000; /* Darker text color on hover */
+}
+
+/* Icon animation - spinning */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.ourServiceHeader {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .service-card {
+    padding: 15px;
+  }
+
+  .service-card h5 {
+    font-size: 1.25rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-card {
+    padding: 10px;
+    margin-bottom: 25px;
+  }
+  .service-card h5 {
+    font-size: 1.15rem;
+  }
+
+  .service-card p {
+    font-size: 0.85rem;
+  }
+  .ourServiceHeader {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+}
+/* nav.css */
+.car-wrapper-section {
+  padding: 20px 0;
+  background-color: #f8f9fa; /* Adjust background color as needed */
+}
+
+.service-heading {
+  font-size: 24px;
+  color: #555;
+  text-transform: capitalize;
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+.car-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: #f8f9fa; /* Adjust background color as needed */
+  position: relative;
+  padding: 25px 0; /* Add space at the top and bottom of the wrapper */
+}
+
+.car-images {
+  display: flex;
+  width: calc(100% * 2); /* Double the width for seamless scrolling */
+  animation: scroll 30s linear infinite;
+}
+
+.car-images img {
+  height: 60px; /* Reduced image height */
+  margin: 0 25px; /* Add space between images (left and right) */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .car-images img {
+    height: 55px; /* Adjust image height for smaller screens */
+  }
+  .service-heading {
+    font-size: 20px;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    font-weight: bold;
+  }
+}
+/* about.css */
+.about-section {
+  background-color: white;
+  padding: 60px 0;
+}
+
+.about-heading {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about-subheading {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #555;
+  text-transform: capitalize;
+}
+
+.about-content p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.8;
+}
+
+.about-image-container {
+  text-align: center;
+  position: relative;
+}
+
+.about-image {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Additional styles for the enhanced image */
+.enhanced:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.1);
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 20px;
+  }
+
+  .about-heading {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .about-subheading {
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
+
+  .about-content {
+    text-align: center;
+    margin-top: 30px !important;
+  }
+  .about-content p {
+    margin-top: 15px;
+    margin-bottom: 0px;
+  }
+  .about-image {
+    width: 100%;
+    height: auto;
+  }
+}
